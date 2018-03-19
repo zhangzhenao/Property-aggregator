@@ -40,5 +40,6 @@
   <modules>
     <module>Property-dao</module>
     <module>Property-web</module>
+    <module>Property-utils</module>
   </modules>
 </project>
