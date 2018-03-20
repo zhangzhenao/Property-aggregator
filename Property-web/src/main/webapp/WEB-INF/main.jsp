@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>首页</title>
 <%@ include file="/common.jsp" %>
 <link rel="stylesheet" href="css/wu.css" type="text/css"/>
 </head>
@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- begin of header -->
 	<div class="wu-header" data-options="region:'north',border:false,split:true">
     	<div class="wu-header-left">
-        	<h1>EasyUI Web Admin</h1>
+        	<h1>物业-商业版</h1>
         </div>
         <div class="wu-header-right">
         	<p><strong class="easyui-tooltip" title="2条未读消息">${sessionScope.login_user.username }</strong>，
