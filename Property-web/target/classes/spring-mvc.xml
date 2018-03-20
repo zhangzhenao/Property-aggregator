@@ -59,7 +59,7 @@
 	
 	<!--扫描spring MVC 注解所在的包，  -->
 	
-	<context:component-scan base-package="org.permission.controller"></context:component-scan>
+	<context:component-scan base-package="org.property.controller"></context:component-scan>
 
 
 
