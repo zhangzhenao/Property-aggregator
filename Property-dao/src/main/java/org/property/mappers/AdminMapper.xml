@@ -6,6 +6,7 @@
 		select * from Admin
 	</select>
 	
+	
 	<select id="getById" resultType="Admin">
 		select * from Admin where id = #{id}
 	</select>
