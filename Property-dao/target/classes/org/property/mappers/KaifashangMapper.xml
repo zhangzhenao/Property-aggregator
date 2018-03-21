@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.property.dao.KaifashangDao">
+
+	<select id="getAll" resultType="Kaifashang">
+		select * from Kaifashang
+	</select>
+	
+	<select id="getById" resultType="Kaifashang">
+		select * from Kaifashang where id = #{id}
+	</select>
+	<sql id="sqlCondition">
+		<if test="condition != null">
+			<where>
+				
+			</where>
+		</if>
+	</sql>
+	
+	<resultMap type="Kaifashang" id="KaifashangMap" autoMapping="true">
+		<id column="id" property="id"/>
+	</resultMap>
+	
+	<select id="getByCondition" resultMap="KaifashangMap" >
+		select * from Kaifashang 
+		<include refid="sqlCondition"></include>
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getCountByCondition" resultType="int">
+		select count(1) from Kaifashang 
+		<include refid="sqlCondition"></include>
+	</select>
+	
+	
+	<insert id="add" parameterType="Kaifashang" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		insert into Kaifashang(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,id,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,id,name,parentid,id,subsidiaryId,communityname,floorarea,coveredarea,greenarea,roadarea,residentiallocation,buildingnumber,principal,contatway,developersId,id,gongsiId,dandongId,loucengId,anaccountarea,housetype,orientation,finish,floorsnuber,floorage,usablearea,atticarea,storagearea,function,remarks,status,id,gsId,activitycontent,compere,participant,activitydate,remark,id,gsname,legal,contact,phone,address,remark) 
+			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{id},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{id},#{name},#{parentid},#{id},#{subsidiaryId},#{communityname},#{floorarea},#{coveredarea},#{greenarea},#{roadarea},#{residentiallocation},#{buildingnumber},#{principal},#{contatway},#{developersId},#{id},#{gongsiId},#{dandongId},#{loucengId},#{anaccountarea},#{housetype},#{orientation},#{finish},#{floorsnuber},#{floorage},#{usablearea},#{atticarea},#{storagearea},#{function},#{remarks},#{status},#{id},#{gsId},#{activitycontent},#{compere},#{participant},#{activitydate},#{remark},#{id},#{gsname},#{legal},#{contact},#{phone},#{address},#{remark})
+	</insert>
+	
+	<update id="update" parameterType="Kaifashang">
+		update Kaifashang set 
+				id = #{id},
+				username = #{username},
+				userpassword = #{userpassword},
+				salt = #{salt},
+				status = #{status},
+				id = #{id},
+				gsId = #{gsId},
+				startdate = #{startdate},
+				closeddate = #{closeddate},
+				classes = #{classes},
+				timeframe = #{timeframe},
+				post = #{post},
+				watchkeeper = #{watchkeeper},
+				remark = #{remark},
+				id = #{id},
+				fangchanId = #{fangchanId},
+				singlenumber = #{singlenumber},
+				unitsnumber = #{unitsnumber},
+				structuretype = #{structuretype},
+				br = #{br},
+				damagedlevel = #{damagedlevel},
+				constructionarea = #{constructionarea},
+				usearea = #{usearea},
+				constructionpermit = #{constructionpermit},
+				licence = #{licence},
+				completiondate = #{completiondate},
+				cappingdate = #{cappingdate},
+				remark = #{remark},
+				id = #{id},
+				name = #{name},
+				parentid = #{parentid},
+				id = #{id},
+				subsidiaryId = #{subsidiaryId},
+				communityname = #{communityname},
+				floorarea = #{floorarea},
+				coveredarea = #{coveredarea},
+				greenarea = #{greenarea},
+				roadarea = #{roadarea},
+				residentiallocation = #{residentiallocation},
+				buildingnumber = #{buildingnumber},
+				principal = #{principal},
+				contatway = #{contatway},
+				developersId = #{developersId},
+				id = #{id},
+				gongsiId = #{gongsiId},
+				dandongId = #{dandongId},
+				loucengId = #{loucengId},
+				anaccountarea = #{anaccountarea},
+				housetype = #{housetype},
+				orientation = #{orientation},
+				finish = #{finish},
+				floorsnuber = #{floorsnuber},
+				floorage = #{floorage},
+				usablearea = #{usablearea},
+				atticarea = #{atticarea},
+				storagearea = #{storagearea},
+				function = #{function},
+				remarks = #{remarks},
+				status = #{status},
+				id = #{id},
+				gsId = #{gsId},
+				activitycontent = #{activitycontent},
+				compere = #{compere},
+				participant = #{participant},
+				activitydate = #{activitydate},
+				remark = #{remark},
+				id = #{id},
+				gsname = #{gsname},
+				legal = #{legal},
+				contact = #{contact},
+				phone = #{phone},
+				address = #{address},
+				remark = #{remark}
+			where id = #{id}
+	</update>
+	
+	<delete id="batchDelete" parameterType="java.lang.reflect.Array">
+		delete from Kaifashang where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="item">
+			#{item}
+		</foreach>
+	</delete>
+	
+	
+	
+	
+</mapper>

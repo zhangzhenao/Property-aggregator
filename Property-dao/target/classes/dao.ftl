@@ -1,6 +1,6 @@
 package Property-dao Maven java.dao;
 
-import org.permission.pojo.${pojoName};
+import Property-dao Maven java.pojo.${pojoName};
 
 public interface ${pojoName}Dao extends CommonDao<${pojoName}, ${pkType}> {
 

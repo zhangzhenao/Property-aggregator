@@ -44,9 +44,9 @@
 	</mvc:annotation-driven>
 	
 	
-	<!-- 学生头像 -->
+	<!-- 学生头像
 	<mvc:resources location="/WEB-INF/jsp/student/image/" mapping="/image/**"></mvc:resources>
-
+ 	-->
 	
 	<!--放过静态资源  1-->
 	<mvc:default-servlet-handler/>

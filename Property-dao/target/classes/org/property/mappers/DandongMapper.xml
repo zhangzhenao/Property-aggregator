@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.property.dao.DandongDao">
+
+	<select id="getAll" resultType="Dandong">
+		select * from Dandong
+	</select>
+	
+	<select id="getById" resultType="Dandong">
+		select * from Dandong where id = #{id}
+	</select>
+	<sql id="sqlCondition">
+		<if test="condition != null">
+			<where>
+				
+			</where>
+		</if>
+	</sql>
+	
+	<resultMap type="Dandong" id="DandongMap" autoMapping="true">
+		<id column="id" property="id"/>
+	</resultMap>
+	
+	<select id="getByCondition" resultMap="DandongMap" >
+		select * from Dandong 
+		<include refid="sqlCondition"></include>
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getCountByCondition" resultType="int">
+		select count(1) from Dandong 
+		<include refid="sqlCondition"></include>
+	</select>
+	
+	
+	<insert id="add" parameterType="Dandong" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		insert into Dandong(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,id,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark) 
+			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{id},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark})
+	</insert>
+	
+	<update id="update" parameterType="Dandong">
+		update Dandong set 
+				id = #{id},
+				username = #{username},
+				userpassword = #{userpassword},
+				salt = #{salt},
+				status = #{status},
+				id = #{id},
+				gsId = #{gsId},
+				startdate = #{startdate},
+				closeddate = #{closeddate},
+				classes = #{classes},
+				timeframe = #{timeframe},
+				post = #{post},
+				watchkeeper = #{watchkeeper},
+				remark = #{remark},
+				id = #{id},
+				fangchanId = #{fangchanId},
+				singlenumber = #{singlenumber},
+				unitsnumber = #{unitsnumber},
+				structuretype = #{structuretype},
+				br = #{br},
+				damagedlevel = #{damagedlevel},
+				constructionarea = #{constructionarea},
+				usearea = #{usearea},
+				constructionpermit = #{constructionpermit},
+				licence = #{licence},
+				completiondate = #{completiondate},
+				cappingdate = #{cappingdate},
+				remark = #{remark}
+			where id = #{id}
+	</update>
+	
+	<delete id="batchDelete" parameterType="java.lang.reflect.Array">
+		delete from Dandong where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="item">
+			#{item}
+		</foreach>
+	</delete>
+	
+	
+	
+	
+</mapper>

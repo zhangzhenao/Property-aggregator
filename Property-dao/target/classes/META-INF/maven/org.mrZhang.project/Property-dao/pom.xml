@@ -107,6 +107,11 @@
 		    <artifactId>spring-jdbc</artifactId>
 		    <version>${org.springframework.version}</version>
 		</dependency>
-	  	
-	</dependencies>
+
+		<dependency>
+			<groupId>org.mrZhang.project</groupId>
+			<artifactId>Property-utils</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	  </dependencies>
 </project>

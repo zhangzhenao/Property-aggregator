@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.property.dao.BaoanDao">
+
+	<select id="getAll" resultType="Baoan">
+		select * from Baoan
+	</select>
+	
+	<select id="getById" resultType="Baoan">
+		select * from Baoan where id = #{id}
+	</select>
+	<sql id="sqlCondition">
+		<if test="condition != null">
+			<where>
+				
+			</where>
+		</if>
+	</sql>
+	
+	<resultMap type="Baoan" id="BaoanMap" autoMapping="true">
+		<id column="id" property="id"/>
+	</resultMap>
+	
+	<select id="getByCondition" resultMap="BaoanMap" >
+		select * from Baoan 
+		<include refid="sqlCondition"></include>
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getCountByCondition" resultType="int">
+		select count(1) from Baoan 
+		<include refid="sqlCondition"></include>
+	</select>
+	
+	
+	<insert id="add" parameterType="Baoan" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		insert into Baoan(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark) 
+			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark})
+	</insert>
+	
+	<update id="update" parameterType="Baoan">
+		update Baoan set 
+				id = #{id},
+				username = #{username},
+				userpassword = #{userpassword},
+				salt = #{salt},
+				status = #{status},
+				id = #{id},
+				gsId = #{gsId},
+				startdate = #{startdate},
+				closeddate = #{closeddate},
+				classes = #{classes},
+				timeframe = #{timeframe},
+				post = #{post},
+				watchkeeper = #{watchkeeper},
+				remark = #{remark}
+			where id = #{id}
+	</update>
+	
+	<delete id="batchDelete" parameterType="java.lang.reflect.Array">
+		delete from Baoan where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="item">
+			#{item}
+		</foreach>
+	</delete>
+	
+	
+	
+	
+</mapper>

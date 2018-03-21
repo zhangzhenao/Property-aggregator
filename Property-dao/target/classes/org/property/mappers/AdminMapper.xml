@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.property.dao.AdminDao">
+
+	<select id="getAll" resultType="Admin">
+		select * from Admin
+	</select>
+	
+	<select id="getById" resultType="Admin">
+		select * from Admin where id = #{id}
+	</select>
+	<sql id="sqlCondition">
+		<if test="condition != null">
+			<where>
+				
+			</where>
+		</if>
+	</sql>
+	
+	<resultMap type="Admin" id="AdminMap" autoMapping="true">
+		<id column="id" property="id"/>
+	</resultMap>
+	
+	<select id="getByCondition" resultMap="AdminMap" >
+		select * from Admin 
+		<include refid="sqlCondition"></include>
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getCountByCondition" resultType="int">
+		select count(1) from Admin 
+		<include refid="sqlCondition"></include>
+	</select>
+	
+	
+	<insert id="add" parameterType="Admin" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		insert into Admin(id,username,userpassword,salt,status) 
+			values(#{id},#{username},#{userpassword},#{salt},#{status})
+	</insert>
+	
+	<update id="update" parameterType="Admin">
+		update Admin set 
+				id = #{id},
+				username = #{username},
+				userpassword = #{userpassword},
+				salt = #{salt},
+				status = #{status}
+			where id = #{id}
+	</update>
+	
+	<delete id="batchDelete" parameterType="java.lang.reflect.Array">
+		delete from Admin where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="item">
+			#{item}
+		</foreach>
+	</delete>
+	
+	
+	
+	
+</mapper>

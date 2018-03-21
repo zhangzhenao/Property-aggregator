@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.property.dao.YanlianDao">
+
+	<select id="getAll" resultType="Yanlian">
+		select * from Yanlian
+	</select>
+	
+	<select id="getById" resultType="Yanlian">
+		select * from Yanlian where id = #{id}
+	</select>
+	<sql id="sqlCondition">
+		<if test="condition != null">
+			<where>
+				
+			</where>
+		</if>
+	</sql>
+	
+	<resultMap type="Yanlian" id="YanlianMap" autoMapping="true">
+		<id column="id" property="id"/>
+	</resultMap>
+	
+	<select id="getByCondition" resultMap="YanlianMap" >
+		select * from Yanlian 
+		<include refid="sqlCondition"></include>
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getCountByCondition" resultType="int">
+		select count(1) from Yanlian 
+		<include refid="sqlCondition"></include>
+	</select>
+	
+	
+	<insert id="add" parameterType="Yanlian" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		insert into Yanlian(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,id,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,id,name,parentid,id,subsidiaryId,communityname,floorarea,coveredarea,greenarea,roadarea,residentiallocation,buildingnumber,principal,contatway,developersId,id,gongsiId,dandongId,loucengId,anaccountarea,housetype,orientation,finish,floorsnuber,floorage,usablearea,atticarea,storagearea,function,remarks,status,id,gsId,activitycontent,compere,participant,activitydate,remark,id,gsname,legal,contact,phone,address,remark,id,louId,dandongId,id,name,type,url,percode,parentid,parentids,sortstring,status,id,name,status,id,roleId,permissionId,id,roleId,userId,id,gsId,facilityname,specification,units,number,place,principal,remark,id,gsId,accidentcause,accidentsite,cause,relatedpersonnel,result,damage,remark,id,gsId,adressee,adresseedate,emailtype,number,handlername,bringman,type,idnumber,bringdate,remark,id,gsId,patroldate,patrolsite,patrolsituation,treatment,remark,id,louId,danyuanId,gehuId,yanfangId,acceptancedate,determinedate,qualified,finish,personnelId,owneropinion,keeperopinion,remark,id,gsId,starttime,endtime,drillingunit,participantsnumber,purpose,assistanceunit,content,effect) 
+			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{id},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{id},#{name},#{parentid},#{id},#{subsidiaryId},#{communityname},#{floorarea},#{coveredarea},#{greenarea},#{roadarea},#{residentiallocation},#{buildingnumber},#{principal},#{contatway},#{developersId},#{id},#{gongsiId},#{dandongId},#{loucengId},#{anaccountarea},#{housetype},#{orientation},#{finish},#{floorsnuber},#{floorage},#{usablearea},#{atticarea},#{storagearea},#{function},#{remarks},#{status},#{id},#{gsId},#{activitycontent},#{compere},#{participant},#{activitydate},#{remark},#{id},#{gsname},#{legal},#{contact},#{phone},#{address},#{remark},#{id},#{louId},#{dandongId},#{id},#{name},#{type},#{url},#{percode},#{parentid},#{parentids},#{sortstring},#{status},#{id},#{name},#{status},#{id},#{roleId},#{permissionId},#{id},#{roleId},#{userId},#{id},#{gsId},#{facilityname},#{specification},#{units},#{number},#{place},#{principal},#{remark},#{id},#{gsId},#{accidentcause},#{accidentsite},#{cause},#{relatedpersonnel},#{result},#{damage},#{remark},#{id},#{gsId},#{adressee},#{adresseedate},#{emailtype},#{number},#{handlername},#{bringman},#{type},#{idnumber},#{bringdate},#{remark},#{id},#{gsId},#{patroldate},#{patrolsite},#{patrolsituation},#{treatment},#{remark},#{id},#{louId},#{danyuanId},#{gehuId},#{yanfangId},#{acceptancedate},#{determinedate},#{qualified},#{finish},#{personnelId},#{owneropinion},#{keeperopinion},#{remark},#{id},#{gsId},#{starttime},#{endtime},#{drillingunit},#{participantsnumber},#{purpose},#{assistanceunit},#{content},#{effect})
+	</insert>
+	
+	<update id="update" parameterType="Yanlian">
+		update Yanlian set 
+				id = #{id},
+				username = #{username},
+				userpassword = #{userpassword},
+				salt = #{salt},
+				status = #{status},
+				id = #{id},
+				gsId = #{gsId},
+				startdate = #{startdate},
+				closeddate = #{closeddate},
+				classes = #{classes},
+				timeframe = #{timeframe},
+				post = #{post},
+				watchkeeper = #{watchkeeper},
+				remark = #{remark},
+				id = #{id},
+				fangchanId = #{fangchanId},
+				singlenumber = #{singlenumber},
+				unitsnumber = #{unitsnumber},
+				structuretype = #{structuretype},
+				br = #{br},
+				damagedlevel = #{damagedlevel},
+				constructionarea = #{constructionarea},
+				usearea = #{usearea},
+				constructionpermit = #{constructionpermit},
+				licence = #{licence},
+				completiondate = #{completiondate},
+				cappingdate = #{cappingdate},
+				remark = #{remark},
+				id = #{id},
+				name = #{name},
+				parentid = #{parentid},
+				id = #{id},
+				subsidiaryId = #{subsidiaryId},
+				communityname = #{communityname},
+				floorarea = #{floorarea},
+				coveredarea = #{coveredarea},
+				greenarea = #{greenarea},
+				roadarea = #{roadarea},
+				residentiallocation = #{residentiallocation},
+				buildingnumber = #{buildingnumber},
+				principal = #{principal},
+				contatway = #{contatway},
+				developersId = #{developersId},
+				id = #{id},
+				gongsiId = #{gongsiId},
+				dandongId = #{dandongId},
+				loucengId = #{loucengId},
+				anaccountarea = #{anaccountarea},
+				housetype = #{housetype},
+				orientation = #{orientation},
+				finish = #{finish},
+				floorsnuber = #{floorsnuber},
+				floorage = #{floorage},
+				usablearea = #{usablearea},
+				atticarea = #{atticarea},
+				storagearea = #{storagearea},
+				function = #{function},
+				remarks = #{remarks},
+				status = #{status},
+				id = #{id},
+				gsId = #{gsId},
+				activitycontent = #{activitycontent},
+				compere = #{compere},
+				participant = #{participant},
+				activitydate = #{activitydate},
+				remark = #{remark},
+				id = #{id},
+				gsname = #{gsname},
+				legal = #{legal},
+				contact = #{contact},
+				phone = #{phone},
+				address = #{address},
+				remark = #{remark},
+				id = #{id},
+				louId = #{louId},
+				dandongId = #{dandongId},
+				id = #{id},
+				name = #{name},
+				type = #{type},
+				url = #{url},
+				percode = #{percode},
+				parentid = #{parentid},
+				parentids = #{parentids},
+				sortstring = #{sortstring},
+				status = #{status},
+				id = #{id},
+				name = #{name},
+				status = #{status},
+				id = #{id},
+				roleId = #{roleId},
+				permissionId = #{permissionId},
+				id = #{id},
+				roleId = #{roleId},
+				userId = #{userId},
+				id = #{id},
+				gsId = #{gsId},
+				facilityname = #{facilityname},
+				specification = #{specification},
+				units = #{units},
+				number = #{number},
+				place = #{place},
+				principal = #{principal},
+				remark = #{remark},
+				id = #{id},
+				gsId = #{gsId},
+				accidentcause = #{accidentcause},
+				accidentsite = #{accidentsite},
+				cause = #{cause},
+				relatedpersonnel = #{relatedpersonnel},
+				result = #{result},
+				damage = #{damage},
+				remark = #{remark},
+				id = #{id},
+				gsId = #{gsId},
+				adressee = #{adressee},
+				adresseedate = #{adresseedate},
+				emailtype = #{emailtype},
+				number = #{number},
+				handlername = #{handlername},
+				bringman = #{bringman},
+				type = #{type},
+				idnumber = #{idnumber},
+				bringdate = #{bringdate},
+				remark = #{remark},
+				id = #{id},
+				gsId = #{gsId},
+				patroldate = #{patroldate},
+				patrolsite = #{patrolsite},
+				patrolsituation = #{patrolsituation},
+				treatment = #{treatment},
+				remark = #{remark},
+				id = #{id},
+				louId = #{louId},
+				danyuanId = #{danyuanId},
+				gehuId = #{gehuId},
+				yanfangId = #{yanfangId},
+				acceptancedate = #{acceptancedate},
+				determinedate = #{determinedate},
+				qualified = #{qualified},
+				finish = #{finish},
+				personnelId = #{personnelId},
+				owneropinion = #{owneropinion},
+				keeperopinion = #{keeperopinion},
+				remark = #{remark},
+				id = #{id},
+				gsId = #{gsId},
+				starttime = #{starttime},
+				endtime = #{endtime},
+				drillingunit = #{drillingunit},
+				participantsnumber = #{participantsnumber},
+				purpose = #{purpose},
+				assistanceunit = #{assistanceunit},
+				content = #{content},
+				effect = #{effect}
+			where id = #{id}
+	</update>
+	
+	<delete id="batchDelete" parameterType="java.lang.reflect.Array">
+		delete from Yanlian where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="item">
+			#{item}
+		</foreach>
+	</delete>
+	
+	
+	
+	
+</mapper>
