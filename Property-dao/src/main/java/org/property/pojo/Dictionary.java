@@ -1,6 +1,10 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Dictionary {
+	
+	@Id
     private Integer id;
 
     private String name;
@@ -30,4 +34,9 @@ public class Dictionary {
     public void setParentid(Integer parentid) {
         this.parentid = parentid;
     }
+
+	@Override
+	public String toString() {
+		return "Dictionary [id=" + id + ", name=" + name + ", parentid=" + parentid + "]";
+	}
 }

@@ -2,7 +2,10 @@ package org.property.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Id;
+
 public class Yijian {
+	@Id
     private Integer id;
 
     private Integer xiaoquId;
@@ -142,4 +145,14 @@ public class Yijian {
     public void setAcceptresults(String acceptresults) {
         this.acceptresults = acceptresults;
     }
+
+	@Override
+	public String toString() {
+		return "Yijian [id=" + id + ", xiaoquId=" + xiaoquId + ", louyuId=" + louyuId + ", danyuanId=" + danyuanId
+				+ ", gehuId=" + gehuId + ", status=" + status + ", proposer=" + proposer + ", complaintdate="
+				+ complaintdate + ", contactway=" + contactway + ", complainttype=" + complainttype
+				+ ", complaintcontent=" + complaintcontent + ", receiver=" + receiver + ", processingdate="
+				+ processingdate + ", acceptresults=" + acceptresults + "]";
+	}
+    
 }

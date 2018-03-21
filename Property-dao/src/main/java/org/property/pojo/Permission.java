@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Permission {
+	@Id
     private Integer id;
 
     private String name;
@@ -90,4 +93,11 @@ public class Permission {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Permission [id=" + id + ", name=" + name + ", type=" + type + ", url=" + url + ", percode=" + percode
+				+ ", parentid=" + parentid + ", parentids=" + parentids + ", sortstring=" + sortstring + ", status="
+				+ status + "]";
+	}
 }

@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Shigu {
+	@Id
     private Integer id;
 
     private Integer gsId;
@@ -90,4 +93,12 @@ public class Shigu {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+	@Override
+	public String toString() {
+		return "Shigu [id=" + id + ", gsId=" + gsId + ", accidentcause=" + accidentcause + ", accidentsite="
+				+ accidentsite + ", cause=" + cause + ", relatedpersonnel=" + relatedpersonnel + ", result=" + result
+				+ ", damage=" + damage + ", remark=" + remark + "]";
+	}
+    
 }

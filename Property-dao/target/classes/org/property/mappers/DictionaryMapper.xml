@@ -34,18 +34,16 @@
 	
 	
 	<insert id="add" parameterType="Dictionary" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert into Dictionary(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,id,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,id,name,parentid) 
-			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{id},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{id},#{name},#{parentid})
+		insert into Dictionary(username,userpassword,salt,status,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,name,parentid) 
+			values(#{username},#{userpassword},#{salt},#{status},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{name},#{parentid})
 	</insert>
 	
 	<update id="update" parameterType="Dictionary">
 		update Dictionary set 
-				id = #{id},
 				username = #{username},
 				userpassword = #{userpassword},
 				salt = #{salt},
 				status = #{status},
-				id = #{id},
 				gsId = #{gsId},
 				startdate = #{startdate},
 				closeddate = #{closeddate},
@@ -54,7 +52,6 @@
 				post = #{post},
 				watchkeeper = #{watchkeeper},
 				remark = #{remark},
-				id = #{id},
 				fangchanId = #{fangchanId},
 				singlenumber = #{singlenumber},
 				unitsnumber = #{unitsnumber},
@@ -68,7 +65,6 @@
 				completiondate = #{completiondate},
 				cappingdate = #{cappingdate},
 				remark = #{remark},
-				id = #{id},
 				name = #{name},
 				parentid = #{parentid}
 			where id = #{id}

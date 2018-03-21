@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Zigongsi {
+	@Id
     private Integer id;
 
     private String companyname;
@@ -110,4 +113,13 @@ public class Zigongsi {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
+
+	@Override
+	public String toString() {
+		return "Zigongsi [id=" + id + ", companyname=" + companyname + ", companyprofile=" + companyprofile
+				+ ", companyaddress=" + companyaddress + ", postalcode=" + postalcode + ", email=" + email
+				+ ", companyphone=" + companyphone + ", fax=" + fax + ", depositbank=" + depositbank + ", bankaccount="
+				+ bankaccount + ", remarks=" + remarks + "]";
+	}
+    
 }

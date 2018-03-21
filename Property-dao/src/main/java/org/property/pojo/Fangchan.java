@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Fangchan {
+	@Id
     private Integer id;
 
     private Integer subsidiaryId;
@@ -120,4 +123,13 @@ public class Fangchan {
     public void setDevelopersId(Integer developersId) {
         this.developersId = developersId;
     }
+
+	@Override
+	public String toString() {
+		return "Fangchan [id=" + id + ", subsidiaryId=" + subsidiaryId + ", communityname=" + communityname
+				+ ", floorarea=" + floorarea + ", coveredarea=" + coveredarea + ", greenarea=" + greenarea
+				+ ", roadarea=" + roadarea + ", residentiallocation=" + residentiallocation + ", buildingnumber="
+				+ buildingnumber + ", principal=" + principal + ", contatway=" + contatway + ", developersId="
+				+ developersId + "]";
+	}
 }

@@ -34,18 +34,16 @@
 	
 	
 	<insert id="add" parameterType="Louceng" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert into Louceng(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,id,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,id,name,parentid,id,subsidiaryId,communityname,floorarea,coveredarea,greenarea,roadarea,residentiallocation,buildingnumber,principal,contatway,developersId,id,gongsiId,dandongId,loucengId,anaccountarea,housetype,orientation,finish,floorsnuber,floorage,usablearea,atticarea,storagearea,function,remarks,status,id,gsId,activitycontent,compere,participant,activitydate,remark,id,gsname,legal,contact,phone,address,remark,id,louId,dandongId) 
-			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{id},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{id},#{name},#{parentid},#{id},#{subsidiaryId},#{communityname},#{floorarea},#{coveredarea},#{greenarea},#{roadarea},#{residentiallocation},#{buildingnumber},#{principal},#{contatway},#{developersId},#{id},#{gongsiId},#{dandongId},#{loucengId},#{anaccountarea},#{housetype},#{orientation},#{finish},#{floorsnuber},#{floorage},#{usablearea},#{atticarea},#{storagearea},#{function},#{remarks},#{status},#{id},#{gsId},#{activitycontent},#{compere},#{participant},#{activitydate},#{remark},#{id},#{gsname},#{legal},#{contact},#{phone},#{address},#{remark},#{id},#{louId},#{dandongId})
+		insert into Louceng(username,userpassword,salt,status,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,name,parentid,subsidiaryId,communityname,floorarea,coveredarea,greenarea,roadarea,residentiallocation,buildingnumber,principal,contatway,developersId,gongsiId,dandongId,loucengId,anaccountarea,housetype,orientation,finish,floorsnuber,floorage,usablearea,atticarea,storagearea,function,remarks,status,gsId,activitycontent,compere,participant,activitydate,remark,gsname,legal,contact,phone,address,remark,louId,dandongId) 
+			values(#{username},#{userpassword},#{salt},#{status},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{name},#{parentid},#{subsidiaryId},#{communityname},#{floorarea},#{coveredarea},#{greenarea},#{roadarea},#{residentiallocation},#{buildingnumber},#{principal},#{contatway},#{developersId},#{gongsiId},#{dandongId},#{loucengId},#{anaccountarea},#{housetype},#{orientation},#{finish},#{floorsnuber},#{floorage},#{usablearea},#{atticarea},#{storagearea},#{function},#{remarks},#{status},#{gsId},#{activitycontent},#{compere},#{participant},#{activitydate},#{remark},#{gsname},#{legal},#{contact},#{phone},#{address},#{remark},#{louId},#{dandongId})
 	</insert>
 	
 	<update id="update" parameterType="Louceng">
 		update Louceng set 
-				id = #{id},
 				username = #{username},
 				userpassword = #{userpassword},
 				salt = #{salt},
 				status = #{status},
-				id = #{id},
 				gsId = #{gsId},
 				startdate = #{startdate},
 				closeddate = #{closeddate},
@@ -54,7 +52,6 @@
 				post = #{post},
 				watchkeeper = #{watchkeeper},
 				remark = #{remark},
-				id = #{id},
 				fangchanId = #{fangchanId},
 				singlenumber = #{singlenumber},
 				unitsnumber = #{unitsnumber},
@@ -68,10 +65,8 @@
 				completiondate = #{completiondate},
 				cappingdate = #{cappingdate},
 				remark = #{remark},
-				id = #{id},
 				name = #{name},
 				parentid = #{parentid},
-				id = #{id},
 				subsidiaryId = #{subsidiaryId},
 				communityname = #{communityname},
 				floorarea = #{floorarea},
@@ -83,7 +78,6 @@
 				principal = #{principal},
 				contatway = #{contatway},
 				developersId = #{developersId},
-				id = #{id},
 				gongsiId = #{gongsiId},
 				dandongId = #{dandongId},
 				loucengId = #{loucengId},
@@ -99,21 +93,18 @@
 				function = #{function},
 				remarks = #{remarks},
 				status = #{status},
-				id = #{id},
 				gsId = #{gsId},
 				activitycontent = #{activitycontent},
 				compere = #{compere},
 				participant = #{participant},
 				activitydate = #{activitydate},
 				remark = #{remark},
-				id = #{id},
 				gsname = #{gsname},
 				legal = #{legal},
 				contact = #{contact},
 				phone = #{phone},
 				address = #{address},
 				remark = #{remark},
-				id = #{id},
 				louId = #{louId},
 				dandongId = #{dandongId}
 			where id = #{id}

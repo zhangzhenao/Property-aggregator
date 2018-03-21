@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Fangjian {
+	@Id
     private Integer id;
 
     private Integer gongsiId;
@@ -160,4 +163,13 @@ public class Fangjian {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Fangjian [id=" + id + ", gongsiId=" + gongsiId + ", dandongId=" + dandongId + ", loucengId=" + loucengId
+				+ ", anaccountarea=" + anaccountarea + ", housetype=" + housetype + ", orientation=" + orientation
+				+ ", finish=" + finish + ", floorsnuber=" + floorsnuber + ", floorage=" + floorage + ", usablearea="
+				+ usablearea + ", atticarea=" + atticarea + ", storagearea=" + storagearea + ", function=" + function
+				+ ", remarks=" + remarks + ", status=" + status + "]";
+	}
 }

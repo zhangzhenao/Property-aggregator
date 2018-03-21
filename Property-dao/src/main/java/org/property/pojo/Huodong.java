@@ -2,7 +2,10 @@ package org.property.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Id;
+
 public class Huodong {
+	@Id
     private Integer id;
 
     private Integer gsId;
@@ -72,4 +75,10 @@ public class Huodong {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+	@Override
+	public String toString() {
+		return "Huodong [id=" + id + ", gsId=" + gsId + ", activitycontent=" + activitycontent + ", compere=" + compere
+				+ ", participant=" + participant + ", activitydate=" + activitydate + ", remark=" + remark + "]";
+	}
 }

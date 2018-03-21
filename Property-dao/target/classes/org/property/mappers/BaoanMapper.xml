@@ -34,18 +34,16 @@
 	
 	
 	<insert id="add" parameterType="Baoan" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert into Baoan(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark) 
-			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark})
+		insert into Baoan(username,userpassword,salt,status,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark) 
+			values(#{username},#{userpassword},#{salt},#{status},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark})
 	</insert>
 	
 	<update id="update" parameterType="Baoan">
 		update Baoan set 
-				id = #{id},
 				username = #{username},
 				userpassword = #{userpassword},
 				salt = #{salt},
 				status = #{status},
-				id = #{id},
 				gsId = #{gsId},
 				startdate = #{startdate},
 				closeddate = #{closeddate},

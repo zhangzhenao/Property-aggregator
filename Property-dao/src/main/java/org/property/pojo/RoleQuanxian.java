@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class RoleQuanxian {
+	@Id
     private Integer id;
 
     private Integer roleId;
@@ -30,4 +33,10 @@ public class RoleQuanxian {
     public void setPermissionId(Integer permissionId) {
         this.permissionId = permissionId;
     }
+
+	@Override
+	public String toString() {
+		return "RoleQuanxian [id=" + id + ", roleId=" + roleId + ", permissionId=" + permissionId + "]";
+	}
+    
 }

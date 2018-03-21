@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class RoleUser {
+	@Id
     private Integer id;
 
     private Integer roleId;
@@ -30,4 +33,10 @@ public class RoleUser {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
+	@Override
+	public String toString() {
+		return "RoleUser [id=" + id + ", roleId=" + roleId + ", userId=" + userId + "]";
+	}
+    
 }

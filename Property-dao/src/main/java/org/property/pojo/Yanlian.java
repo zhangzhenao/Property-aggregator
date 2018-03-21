@@ -2,7 +2,10 @@ package org.property.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Id;
+
 public class Yanlian {
+	@Id
     private Integer id;
 
     private Integer gsId;
@@ -102,4 +105,12 @@ public class Yanlian {
     public void setEffect(String effect) {
         this.effect = effect;
     }
+
+	@Override
+	public String toString() {
+		return "Yanlian [id=" + id + ", gsId=" + gsId + ", starttime=" + starttime + ", endtime=" + endtime
+				+ ", drillingunit=" + drillingunit + ", participantsnumber=" + participantsnumber + ", purpose="
+				+ purpose + ", assistanceunit=" + assistanceunit + ", content=" + content + ", effect=" + effect + "]";
+	}
+    
 }

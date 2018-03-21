@@ -2,7 +2,10 @@ package org.property.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Id;
+
 public class Yezhubiao {
+	@Id
     private Integer id;
 
     private String kaleidoscope;
@@ -222,4 +225,16 @@ public class Yezhubiao {
     public void setEmergencyaddress(String emergencyaddress) {
         this.emergencyaddress = emergencyaddress;
     }
+
+	@Override
+	public String toString() {
+		return "Yezhubiao [id=" + id + ", kaleidoscope=" + kaleidoscope + ", ownercode=" + ownercode + ", photo="
+				+ photo + ", name=" + name + ", gender=" + gender + ", nationality=" + nationality + ", birthdate="
+				+ birthdate + ", idnumber=" + idnumber + ", mobile=" + mobile + ", status=" + status + ", password="
+				+ password + ", nativeplace=" + nativeplace + ", workplace=" + workplace + ", education=" + education
+				+ ", bankaccount=" + bankaccount + ", openingbank=" + openingbank + ", address=" + address
+				+ ", postalcode=" + postalcode + ", policestation=" + policestation + ", emergencycontact="
+				+ emergencycontact + ", emergencyaddress=" + emergencyaddress + "]";
+	}
+    
 }

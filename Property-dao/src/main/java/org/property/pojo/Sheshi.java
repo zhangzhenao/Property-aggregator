@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Sheshi {
+	@Id
     private Integer id;
 
     private Integer gsId;
@@ -90,4 +93,12 @@ public class Sheshi {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+	@Override
+	public String toString() {
+		return "Sheshi [id=" + id + ", gsId=" + gsId + ", facilityname=" + facilityname + ", specification="
+				+ specification + ", units=" + units + ", number=" + number + ", place=" + place + ", principal="
+				+ principal + ", remark=" + remark + "]";
+	}
+    
 }

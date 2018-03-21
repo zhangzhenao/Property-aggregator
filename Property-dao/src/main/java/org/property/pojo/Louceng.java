@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Louceng {
+	@Id
     private Integer id;
 
     private Integer louId;
@@ -30,4 +33,9 @@ public class Louceng {
     public void setDandongId(Integer dandongId) {
         this.dandongId = dandongId;
     }
+
+	@Override
+	public String toString() {
+		return "Louceng [id=" + id + ", louId=" + louId + ", dandongId=" + dandongId + "]";
+	}
 }

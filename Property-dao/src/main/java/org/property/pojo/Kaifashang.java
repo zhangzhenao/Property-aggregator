@@ -1,6 +1,9 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Kaifashang {
+	@Id
     private Integer id;
 
     private String gsname;
@@ -70,4 +73,10 @@ public class Kaifashang {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+	@Override
+	public String toString() {
+		return "Kaifashang [id=" + id + ", gsname=" + gsname + ", legal=" + legal + ", contact=" + contact + ", phone="
+				+ phone + ", address=" + address + ", remark=" + remark + "]";
+	}
 }

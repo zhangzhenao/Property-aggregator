@@ -2,7 +2,10 @@ package org.property.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Id;
+
 public class Xinjian {
+	@Id
     private Integer id;
 
     private Integer gsId;
@@ -122,4 +125,13 @@ public class Xinjian {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+	@Override
+	public String toString() {
+		return "Xinjian [id=" + id + ", gsId=" + gsId + ", adressee=" + adressee + ", adresseedate=" + adresseedate
+				+ ", emailtype=" + emailtype + ", number=" + number + ", handlername=" + handlername + ", bringman="
+				+ bringman + ", type=" + type + ", idnumber=" + idnumber + ", bringdate=" + bringdate + ", remark="
+				+ remark + "]";
+	}
+    
 }

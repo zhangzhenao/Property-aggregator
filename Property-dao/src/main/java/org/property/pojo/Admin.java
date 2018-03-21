@@ -1,6 +1,10 @@
 package org.property.pojo;
 
+import javax.persistence.Id;
+
 public class Admin {
+	
+	@Id
     private Integer id;
 
     private String username;
@@ -50,4 +54,10 @@ public class Admin {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Admin [id=" + id + ", username=" + username + ", userpassword=" + userpassword + ", salt=" + salt
+				+ ", status=" + status + "]";
+	}
 }

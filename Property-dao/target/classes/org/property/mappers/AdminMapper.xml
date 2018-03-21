@@ -34,13 +34,12 @@
 	
 	
 	<insert id="add" parameterType="Admin" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert into Admin(id,username,userpassword,salt,status) 
-			values(#{id},#{username},#{userpassword},#{salt},#{status})
+		insert into Admin(username,userpassword,salt,status) 
+			values(#{username},#{userpassword},#{salt},#{status})
 	</insert>
 	
 	<update id="update" parameterType="Admin">
 		update Admin set 
-				id = #{id},
 				username = #{username},
 				userpassword = #{userpassword},
 				salt = #{salt},

@@ -51,8 +51,8 @@ public class testGenerter {
 		/**
 		 * 生成dao和mapper
 		 */
-		ProjectUtils.generateDaoInterface();
-		//ProjectUtils.generateMappers();
+		//ProjectUtils.generateDaoInterface();
+		ProjectUtils.generateMappers();
 	}
 
 }

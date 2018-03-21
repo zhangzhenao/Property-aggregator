@@ -34,18 +34,16 @@
 	
 	
 	<insert id="add" parameterType="Fangchan" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert into Fangchan(id,username,userpassword,salt,status,id,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,id,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,id,name,parentid,id,subsidiaryId,communityname,floorarea,coveredarea,greenarea,roadarea,residentiallocation,buildingnumber,principal,contatway,developersId) 
-			values(#{id},#{username},#{userpassword},#{salt},#{status},#{id},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{id},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{id},#{name},#{parentid},#{id},#{subsidiaryId},#{communityname},#{floorarea},#{coveredarea},#{greenarea},#{roadarea},#{residentiallocation},#{buildingnumber},#{principal},#{contatway},#{developersId})
+		insert into Fangchan(username,userpassword,salt,status,gsId,startdate,closeddate,classes,timeframe,post,watchkeeper,remark,fangchanId,singlenumber,unitsnumber,structuretype,br,damagedlevel,constructionarea,usearea,constructionpermit,licence,completiondate,cappingdate,remark,name,parentid,subsidiaryId,communityname,floorarea,coveredarea,greenarea,roadarea,residentiallocation,buildingnumber,principal,contatway,developersId) 
+			values(#{username},#{userpassword},#{salt},#{status},#{gsId},#{startdate},#{closeddate},#{classes},#{timeframe},#{post},#{watchkeeper},#{remark},#{fangchanId},#{singlenumber},#{unitsnumber},#{structuretype},#{br},#{damagedlevel},#{constructionarea},#{usearea},#{constructionpermit},#{licence},#{completiondate},#{cappingdate},#{remark},#{name},#{parentid},#{subsidiaryId},#{communityname},#{floorarea},#{coveredarea},#{greenarea},#{roadarea},#{residentiallocation},#{buildingnumber},#{principal},#{contatway},#{developersId})
 	</insert>
 	
 	<update id="update" parameterType="Fangchan">
 		update Fangchan set 
-				id = #{id},
 				username = #{username},
 				userpassword = #{userpassword},
 				salt = #{salt},
 				status = #{status},
-				id = #{id},
 				gsId = #{gsId},
 				startdate = #{startdate},
 				closeddate = #{closeddate},
@@ -54,7 +52,6 @@
 				post = #{post},
 				watchkeeper = #{watchkeeper},
 				remark = #{remark},
-				id = #{id},
 				fangchanId = #{fangchanId},
 				singlenumber = #{singlenumber},
 				unitsnumber = #{unitsnumber},
@@ -68,10 +65,8 @@
 				completiondate = #{completiondate},
 				cappingdate = #{cappingdate},
 				remark = #{remark},
-				id = #{id},
 				name = #{name},
 				parentid = #{parentid},
-				id = #{id},
 				subsidiaryId = #{subsidiaryId},
 				communityname = #{communityname},
 				floorarea = #{floorarea},
